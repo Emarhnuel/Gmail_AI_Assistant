@@ -1,1 +1,1 @@
-# Gmail_Assistant
+# Gmail_AI_Assistant
