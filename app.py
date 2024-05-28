@@ -18,7 +18,7 @@ credentials_file = st.sidebar.file_uploader("Upload credentials.json", type="jso
 openai_api_key = st.sidebar.text_input("Enter your OPENAI_API_KEY", type="password")
 
 # Sidebar for selecting OpenAI model
-model_options = ["gpt-3.5-turbo", "gpt-4-turbo"]
+model_options = ["gpt-3.5-turbo", "gpt-4-turbo", "gpt-4o", "gpt-4", gpt-3.5-turb0-16k ]
 selected_model = st.sidebar.selectbox("Choose OpenAI model", model_options)
 
 # Check if the credentials file is uploaded
