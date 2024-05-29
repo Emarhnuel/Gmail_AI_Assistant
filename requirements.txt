@@ -3,6 +3,7 @@ google-auth-httplib2
 google-auth-oauthlib
 beautifulsoup4
 langchain
+google-auth
 langchain-community
 langchain-openai
 langchainhub
