@@ -29,7 +29,7 @@ credentials = None
 if credentials_file is not None:
     try:
         credentials = json.load(credentials_file)
-        if "installed" not in credentials:
+        if "installed" not in credentials and "web" not in credentials:
             raise ValueError("Client secrets is not in the correct format.")
         st.sidebar.success("credentials.json uploaded successfully")
     except Exception as e:
