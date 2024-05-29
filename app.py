@@ -2,6 +2,8 @@ import os
 import streamlit as st
 from langchain_community.agent_toolkits import GmailToolkit
 from langchain import hub
+from google.oauth2 import id_token
+from google.auth.transport import requests
 from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
@@ -24,6 +26,14 @@ selected_model = st.sidebar.selectbox("Choose OpenAI model", model_options)
 
 # Initialize credentials variable
 credentials = None
+
+def get_google_id_token(auth_code, client_id):
+    try:
+        token = id_token.fetch_id_token(requests.Request(), auth_code, client_id)
+        return token
+    except ValueError as e:
+        st.error(f"Error retrieving ID token: {e}")
+
 
 # Check if the credentials file is uploaded
 if credentials_file is not None:
